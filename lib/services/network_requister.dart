@@ -5,7 +5,7 @@ import 'package:http/http.dart' as http;
 import 'package:provider_counter_app/model/data_model.dart';
 
 class NetworkRequister {
-  Future<List<DataModel>> getData(String url) async {
+  Future<List<DataModel>> getData() async {
     try {
       http.Response response = await http.get(
           Uri.parse("https://jsonplaceholder.typicode.com/todos"));

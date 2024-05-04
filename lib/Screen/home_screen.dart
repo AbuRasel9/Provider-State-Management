@@ -36,7 +36,6 @@ class _HomeScreenState extends State<HomeScreen> {
       appBar: AppBar(
         actions: [
           Consumer(builder: (context, data, child) {
-            print("00000000000000000000000000000000000000$data");
             return IconButton(
                 onPressed: () {
                   //------------>condition check if mode have true than its false other wise false to true<--------------------//
@@ -54,7 +53,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     : const Icon(Icons.sunny));
           })
         ],
-        title: const Text("api call and search data"),
+        title: const Text("api call and data search"),
       ),
       body: Padding(
         padding: const EdgeInsets.symmetric(vertical: 20.0, horizontal: 10),

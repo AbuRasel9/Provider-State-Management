@@ -81,7 +81,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                 value.search("");
                                 searchTextController.clear();
                               },
-                              icon: Icon(
+                              icon: const Icon(
                                 Icons.highlight_remove_outlined,
                               ),
                             ),
@@ -93,7 +93,8 @@ class _HomeScreenState extends State<HomeScreen> {
                       )
                     : Expanded(
                         child: Padding(
-                          padding: const EdgeInsets.symmetric(vertical: 20.0,horizontal: 15),
+                          padding: const EdgeInsets.symmetric(
+                              vertical: 20.0, horizontal: 15),
                           child: ListView.builder(
                               itemCount: value.data.length,
                               itemBuilder: (context, index) {

@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:provider_counter_app/Screen/home_screen.dart';
+import 'package:provider_counter_app/Screen/login_screen.dart';
 import 'package:provider_counter_app/provider/api_call_provider.dart';
+import 'package:provider_counter_app/provider/auth_provider.dart';
 import 'package:provider_counter_app/provider/theme_changer_provider.dart';
 
 void main(){
-  runApp(MyApp());
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
@@ -16,8 +18,9 @@ class MyApp extends StatelessWidget {
     return MultiProvider(
       providers: [
         //container opacity change provider
-        ChangeNotifierProvider(create: (_)=>ApiCallProvider(),),
         ChangeNotifierProvider(create: (_)=>ThemeChangeProvider(),),
+        ChangeNotifierProvider(create: (_)=>ApiCallProvider(),),
+        ChangeNotifierProvider(create: (_)=>AuthProvider(),),
         //dark theme provider
       ],
       child: Builder(
@@ -29,7 +32,7 @@ class MyApp extends StatelessWidget {
             darkTheme: ThemeData(
               brightness: Brightness.dark
             ),
-            home: HomeScreen(),
+            home: const Login_screen(),
           );
         }
       ),
